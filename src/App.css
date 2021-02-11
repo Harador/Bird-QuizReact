@@ -1,38 +1,176 @@
-.App {
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #222;
+  color: white;  
+  font-size: 18px;
+}
+.wrapper{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.Logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Logo-img{
+  max-width: 200px;  
+}
+.Logo-score{
+  font-size: 1.2em;
+  font-weight: normal;
+}
+.Menu{
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.Menu ul{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  margin-top: 0px;
+  padding:0;
+  overflow: hidden;
+}
+.Menu ul li{
+  background-color: #008966;
   text-align: center;
+  width: 100%;
+  list-style: none;
+  padding: 7px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Menu ul li.active{
+  background-color: #00bc8c;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Bird{
+  background-color: #303030;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Bird-header{
+  display: flex;
+}
+.Bird-content{
+  width: 100%;
+}
+.Bird-img{
+  border-radius: 10px;
+  margin-right: 40px;
+}
+.Bird-content h3{
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+.Bird-content p{
+  margin: 6px auto 0px auto;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #555;
+}
+.Bird-content audio{
+  outline: none;
+  margin-top: 15px;
+  width: 100%;
+}
+.Content{
+  display: flex;
+}
+.Content .BirdList{
+  flex: 1;
+  margin-right: 35px;
+}
+.Content .Bird{
+  height: 100%;
+  margin: 0;
+  border: 1px solid #555;
+  padding: 0;
+}
+.Content .Bird .Bird-box{
+  padding: 20px;
+}
+.Bird .noVisible{
+  position: absolute;
+  top: 10px;
+  left: 15px;
   display: flex;
   flex-direction: column;
+}
+.Bird .noVisible span{
+  margin-bottom: 5px;
+}
+.BirdList ul{  
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+}
+.BirdList ul li{
+  list-style: none;    
+  height: 100%;
+  padding-left: 25px;
+  background-color: #303030;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.BirdList ul li{
+  border-bottom: 1px solid #555;
+}
+.BirdList ul li:last-child{
+  border: 0;
+}
+.BirdList ul li span{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  background-color: #444;
+  transition: .4s;
+}
+.BirdList ul li span.true{
+  background-color: #00bc8c;
+}
+.BirdList ul li span.false{
+  background-color: #d62c1a;
+}
+.BirdList ul li:hover{
+  cursor: pointer;
+  background-color: #555;
+}
+.Content .Bird{
+  flex: 1;
+}
+.FooterButton{
+  width: 100%;
+  margin: 20px 0px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  padding: 7px;
   color: white;
+  background-color: #303030;
+  font-size: 16px;
+  transition: .5s;
 }
-
-.App-link {
-  color: #61dafb;
+.FooterButton:hover{
+  border: 1px solid rgb(104, 104, 104);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.FooterButton:active{
+  border: 1px solid rgb(153, 151, 151);
+  transition: .3s;
+}
+.hidden{
+  visibility: hidden;
 }
