@@ -1,13 +1,9 @@
 export default (props)=>{
+    const sections =['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы',]
     return(
         <div className='Menu'>
-            <ul>
-                <li className='active'>Разминка</li>
-                <li>Воробьиные</li>
-                <li>Лесные птицы</li>
-                <li>Певчие птицы</li>
-                <li>Хищные птицы</li>
-                <li>Морские птицы</li>
+            <ul> 
+                {sections.map((section, index) => (<li key={index} className={`${index==props.currentSection ? 'active' : ''}`}>{section}</li>))}
             </ul>
         </div>        
     )

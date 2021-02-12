@@ -1,7 +1,7 @@
-import Bird from '../components/Bird';
+import BirdMain from '../components/BirdMain';
 
-export default (props)=>{
+export default ({bird, trueAnswer})=>{
     return(
-        <Bird content={false} visible={true}/>
+        <BirdMain bird={bird} trueAnswer={trueAnswer}/>
     )
 }

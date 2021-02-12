@@ -1,0 +1,61 @@
+@media (max-width:1150px){
+    body{
+        padding: 40px;
+    }
+    .wrapper {
+        max-width: 800px;        
+    }
+    .Content ul{
+        max-height: 300px;
+    }
+    .Content .Bird .Bird-box .Bird-header{
+        flex-direction: column;  
+    }
+    .Content .Bird .Bird-box .Bird-header img{
+        max-width: 200px;
+        margin: 0 auto 25px auto;
+    }
+}
+@media (max-width:850px){
+    .Menu ul{
+        flex-shrink: 1;
+        flex-wrap: wrap;
+    }
+    .Menu ul li{
+        flex: 1;
+        min-width: 136px;
+    }
+}
+@media (max-width:615px){
+    .Content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Content .BirdList{
+        min-width: 100%;
+        margin-right: 0px;
+        margin-bottom: 25px;
+    }
+    .Content .BirdList ul li{        
+        height: 45px;
+    }
+}
+@media (max-width:580px){
+    .Menu + .Bird .Bird-header{
+        flex-direction: column;
+        text-align: center;
+    }
+    .Menu + .Bird .Bird-header img{
+        max-width: 200px;
+        margin: 0 auto 25px auto;
+
+    }
+}
+@media (max-width: 450px){
+    body{
+        padding: 7px;
+    }
+    .Win h1{
+        font-size: 35px;
+    }
+}

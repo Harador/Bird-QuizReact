@@ -5,11 +5,11 @@ body{
   background-color: #222;
   color: white;  
   font-size: 18px;
+  padding: 20px;
 }
 .wrapper{
   max-width: 1140px;
   margin: 0 auto;
-  padding: 10px;
 }
 .Logo{
   display: flex;
@@ -62,6 +62,8 @@ body{
 .Bird-img{
   border-radius: 10px;
   margin-right: 40px;
+  width: 200px;
+  height: 155px;
 }
 .Bird-content h3{
   margin: 0;
@@ -86,6 +88,7 @@ body{
   margin-right: 35px;
 }
 .Content .Bird{
+  min-height: 338px;
   height: 100%;
   margin: 0;
   border: 1px solid #555;
@@ -164,12 +167,50 @@ body{
   font-size: 16px;
   transition: .5s;
 }
+.FooterButton.greenBut{
+  background-color: #00bc8c;
+}
+.FooterButton.greenBut:hover{
+  background-color: #2be2b4;
+}
 .FooterButton:hover{
   border: 1px solid rgb(104, 104, 104);
 }
 .FooterButton:active{
   border: 1px solid rgb(153, 151, 151);
   transition: .3s;
+}
+.Win{
+  width:100%;
+  text-align: center;
+  background-color: #303030;
+  padding: 50px 10px;
+}
+.Win h1{
+  font-size: 50px;
+  margin: 0px 0 10px;
+}
+.Win p{
+  font-size: 20px;
+  margin-bottom: 70px;
+}
+.Win button{
+  width: 90%;
+  border: 1px solid #555;
+  border-radius: 5px;
+  outline: none;  
+  padding: 15px;
+  color: white;
+  background-color: #00bc8c;
+  font-size: 16px;
+  transition: .5s;
+}
+.Win button:hover{
+  background-color: #2bdbaf;
+}
+.Win button:active{
+  background-color: #4ee7c1;
+  transition: 0s
 }
 .hidden{
   visibility: hidden;
