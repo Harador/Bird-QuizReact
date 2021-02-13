@@ -1,25 +1,24 @@
 import React from 'react'
 
-
-export default class LiBird extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {liStyle: ''}
-    }
-    handleClick = () =>{     
-        if(!this.props.trueAnswer&&this.props.name === this.props.trueBird.name){
-            this.setState({liStyle: 'true'})     
-            this.props.getTrueAnswer()
-        } else{
-            !this.props.trueAnswer && this.setState({liStyle: 'false'}) 
+export default ({showBird, id, name, trueBird, getTrueAnswer, trueAnswer, selectLi, changeSelectLi}) =>{
+    let handleClick = () =>{     
+        if(!trueAnswer&&name === trueBird.name){
+            changeSelectLi(id, 'true')
+            getTrueAnswer()
+            let audio = new Audio();
+	        audio.src = './true_sound.mp3';
+	        audio.autoplay = true;            
+        } else if(!trueAnswer){
+             changeSelectLi(id, 'false')
+             let audio = new Audio();
+             audio.src = './false_sound.mp3';
+             audio.autoplay = true; 
         }
-        this.props.showBird(this.props.name)
+        showBird(name)
     }
-    render() {
-        return (
-            <li onClick={this.handleClick}><span className={this.state.liStyle}></span>{this.props.name}</li>
-        )
-    }
+    return (
+        <li onClick={handleClick}><span className={selectLi[id]}></span>{name}</li>
+    )
 }
 
 

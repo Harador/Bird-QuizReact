@@ -6,7 +6,7 @@ export default (props)=>{
                     <img className="Bird-img" src={props.bird.image}></img>
                     <div className="Bird-content">
                         <h3>{props.bird.name}</h3>
-                        {props.content&&<p>{props.bird.species}</p>}
+                        <p>{props.bird.species}</p>
                         <audio controls='controls' src={props.bird.audio}></audio>
                     </div>
                 </div>

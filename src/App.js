@@ -11,8 +11,17 @@ class App extends React.Component {
       currentSection: 0,
       trueBird: this.getRandom(0,5),
       trueAnswer: false,  
-      score: 10,
+      selectBird: false,
+      score: 0,
       win: false,
+      selectLi: {
+        1: '',
+        2: '',
+        3: '',
+        4: '',
+        5: '',
+        6: '',
+      }
     }
     this.getTrueAnswer = this.getTrueAnswer.bind(this)
   }
@@ -24,20 +33,72 @@ class App extends React.Component {
       trueAnswer: true,
     })
   }
+  changeSelectLi= (num,value) =>{
+    this.setState({selectLi: {...this.state.selectLi, [num]: value,}})
+  }
+  showBird = (name) => {
+    let selectBird = data[this.state.currentSection].filter((chirik)=> (chirik.name == name))[0]
+    this.setState({selectBird: selectBird})
+  }
   nextSection = ()=>{
-    let section = this.state.currentSection
-    this.setState({      
-      currentSection: ++section,
+    let section = this.state.currentSection;
+    let newScore = this.calcScore(this.state);
+    if(section===5){
+      this.setState({
+        currentSection: 0,
+        score: newScore,
+        win: true,
+      })
+    } else{
+      this.setState({      
+        currentSection: ++section,
+        trueBird: this.getRandom(0,5),
+        trueAnswer: false,  
+        score: newScore,
+        win: false,
+        selectBird: false,
+        selectLi: {
+          1: '',
+          2: '',
+          3: '',
+          4: '',
+          5: '',
+          6: '',
+        }
+      })
+    }    
+  }
+  newGame = () =>{
+    this.setState({
+      currentSection: 0,
       trueBird: this.getRandom(0,5),
       trueAnswer: false,  
-      score: 10,
+      selectBird: false,
+      score: 0,
       win: false,
+      selectLi: {
+        1: '',
+        2: '',
+        3: '',
+        4: '',
+        5: '',
+        6: '',
+      }
     })
   }
+  calcScore = (state)=>{
+    let stateScore = state.score;
+    let newscore = 5;
+    let obj = state.selectLi;    
+    for(let el in obj){
+      if(obj[el] === 'false' && newscore>0) {        
+        --newscore};
+    }
+    newscore += stateScore;
+    return newscore
+  }
   render() {
-    let currentSection = this.state.currentSection;    
-    let trueBird = this.state.trueBird;
-    let trueAnswer = this.state.trueAnswer;  
+    let {currentSection, trueBird, trueAnswer, selectBird, selectLi,} = this.state
     return (
       <div className="wrapper">        
         <Logo score={this.state.score}/>
@@ -45,10 +106,13 @@ class App extends React.Component {
         {!this.state.win
         ? <>
             <Main bird={data[currentSection][trueBird]} trueAnswer={trueAnswer}/>
-            <Content currentSection={data[currentSection]} trueBird={data[currentSection][trueBird]} getTrueAnswer={this.getTrueAnswer}/>
+            <Content currentSection={data[currentSection]} trueBird={data[currentSection][trueBird]}
+             getTrueAnswer={this.getTrueAnswer} trueAnswer={trueAnswer}
+             selectBird={selectBird} showBird={this.showBird}
+             selectLi={selectLi} changeSelectLi={this.changeSelectLi}/>
             <Footer nextSection={this.nextSection} trueAnswer={this.state.trueAnswer}/>
           </>
-        :  <Win score={this.state.score}/>
+        :  <Win score={this.state.score} newGame={this.newGame}/>
         }        
       </div>
     )

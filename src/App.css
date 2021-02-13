@@ -204,6 +204,7 @@ body{
   background-color: #00bc8c;
   font-size: 16px;
   transition: .5s;
+  cursor: pointer;
 }
 .Win button:hover{
   background-color: #2bdbaf;
