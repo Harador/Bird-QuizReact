@@ -1,6 +1,7 @@
 export default ({trueAnswer, nextSection})=>{
     let handleClick = () =>{
         if(trueAnswer){
+            window.scrollTo(0, 0);
             nextSection();
         }
     }

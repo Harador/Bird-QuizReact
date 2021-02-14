@@ -1,4 +1,7 @@
-export default ({bird, trueAnswer})=>{
+import React from 'react';
+import Audio from './AudioPlayer';
+
+export default ({bird, trueAnswer, changeTime, current, duration})=>{
     const srcaudio = bird.audio;
     const srcimg = trueAnswer? bird.image : './noneBird.jpg';
     const name = trueAnswer? bird.name : '*******'
@@ -9,7 +12,7 @@ export default ({bird, trueAnswer})=>{
                     <img className="Bird-img" src={srcimg}></img>
                     <div className="Bird-content">
                         <h3>{name}</h3> 
-                        <audio controls='controls' src={srcaudio}></audio>
+                        <Audio  audio={srcaudio}></Audio>
                     </div>
                 </div>                
             </div>          

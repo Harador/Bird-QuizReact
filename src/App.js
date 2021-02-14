@@ -21,9 +21,21 @@ class App extends React.Component {
         4: '',
         5: '',
         6: '',
-      }
+      }     
     }
     this.getTrueAnswer = this.getTrueAnswer.bind(this)
+  }
+  changeTime = (type, current, duration)=>{
+    type == 'main' ?
+    this.setState({
+      currentTimeMain: current,
+      durationTimeMain: duration,
+    })
+    :
+    this.setState({
+      currentTimeContent: current,
+      durationTimeContent: duration,
+    })
   }
   getRandom(min,max){
     return Math.floor(Math.random() * (max - min)) + min;
@@ -64,7 +76,7 @@ class App extends React.Component {
           4: '',
           5: '',
           6: '',
-        }
+        },       
       })
     }    
   }
@@ -83,7 +95,7 @@ class App extends React.Component {
         4: '',
         5: '',
         6: '',
-      }
+      },      
     })
   }
   calcScore = (state)=>{
@@ -97,7 +109,7 @@ class App extends React.Component {
     newscore += stateScore;
     return newscore
   }
-  render() {
+  render() {    
     let {currentSection, trueBird, trueAnswer, selectBird, selectLi,} = this.state
     return (
       <div className="wrapper">        
@@ -110,8 +122,9 @@ class App extends React.Component {
              getTrueAnswer={this.getTrueAnswer} trueAnswer={trueAnswer}
              selectBird={selectBird} showBird={this.showBird}
              selectLi={selectLi} changeSelectLi={this.changeSelectLi}/>
-            <Footer nextSection={this.nextSection} trueAnswer={this.state.trueAnswer}/>
+            <Footer nextSection={this.nextSection} trueAnswer={this.state.trueAnswer}/>      
           </>
+
         :  <Win score={this.state.score} newGame={this.newGame}/>
         }        
       </div>

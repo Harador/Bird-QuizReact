@@ -39,6 +39,9 @@
     .Content .BirdList ul li{        
         height: 45px;
     }
+    .Content .Bird{
+        width: 100%;
+    }
 }
 @media (max-width:580px){
     .Menu + .Bird .Bird-header{
@@ -54,6 +57,9 @@
 @media (max-width: 450px){
     body{
         padding: 7px;
+    }
+    .Logo h3{
+        font-size: 18px;
     }
     .Win h1{
         font-size: 35px;

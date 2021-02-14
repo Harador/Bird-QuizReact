@@ -1,4 +1,6 @@
-export default (props)=>{
+import React from 'react';
+import Audio from './AudioPlayer';
+export default (props)=>{  
     return(
         <div className="Bird">
             <div className={`Bird-box ${!props.bird? 'hidden' : ''}`}>
@@ -7,7 +9,7 @@ export default (props)=>{
                     <div className="Bird-content">
                         <h3>{props.bird.name}</h3>
                         <p>{props.bird.species}</p>
-                        <audio controls='controls' src={props.bird.audio}></audio>
+                        <Audio  audio={props.bird.audio} selectBird={props.selectBird}></Audio>
                     </div>
                 </div>
                 <p>{props.bird.description}</p>
