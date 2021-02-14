@@ -12,7 +12,6 @@ function AudioPlayer({audio,selectBird}) {
     let progressRef = React.createRef();
     let butClick = () => {         
         if(play =='play'){
-            console.log('f')
             butRef.current.className = 'play far fa-pause-circle';
             audioRef.current.play();
             setPlay('pause');
