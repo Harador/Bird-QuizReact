@@ -2,7 +2,7 @@
   "name": "bird",
   "version": "0.1.0",
   "private": true,
-  "homegape": "https://harador.github.io/Bird-Quiz_React/",
+  "homegape": "https://harador.github.io/BirdQuizReact/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
