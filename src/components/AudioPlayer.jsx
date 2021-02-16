@@ -10,9 +10,9 @@ function AudioPlayer({audio,selectBird}) {
     let fieldRef = React.createRef();
     let audioRef = React.createRef();
     let progressRef = React.createRef();
+
     let butClick = () => {         
         if(play =='play'){
-            console.log('f')
             butRef.current.className = 'play far fa-pause-circle';
             audioRef.current.play();
             setPlay('pause');
@@ -21,6 +21,7 @@ function AudioPlayer({audio,selectBird}) {
             audioRef.current.pause();
             setPlay('play');
         }  
+        console.log('click')
     }
     function moveBar(){
         let currentTime = audioRef.current.currentTime;
@@ -35,6 +36,7 @@ function AudioPlayer({audio,selectBird}) {
         }else{
             setCurrent(calcTime(currentTime)); 
         }    
+        console.log('moveBar')
     }
     let show = ()=>{                
         setCurrent(calcTime(audioRef.current.currentTime));
@@ -50,6 +52,7 @@ function AudioPlayer({audio,selectBird}) {
             audioRef.current.pause();
             butRef.current.className = 'play far fa-play-circle';
         }
+        console.log('show')
     }
     let calcTime = (num) => {
         let minutes = Math.trunc(num/60);
@@ -64,6 +67,7 @@ function AudioPlayer({audio,selectBird}) {
         let result = currentX / field.width;   
         audioRef.current.currentTime = Math.trunc(audioRef.current.duration * result);
         setFlag(true)
+        console.log('change')
     }
      useEffect(() => {    
          if(selectBird===false) audioRef.current.pause(); 

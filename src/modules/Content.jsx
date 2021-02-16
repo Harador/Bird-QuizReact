@@ -11,7 +11,7 @@ export default function Content({currentSection, trueBird, getTrueAnswer, trueAn
                 trueBird={trueBird} trueAnswer={trueAnswer}
                  getTrueAnswer={getTrueAnswer} selectLi={selectLi} 
                  changeSelectLi={changeSelectLi}/>            
-                <BirdContent bird={selectBird} selectBird={selectBird}/>
+                <BirdContent selectBird={selectBird}/>
         </div>
     )
 }
